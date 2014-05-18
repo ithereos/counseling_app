@@ -11,6 +11,7 @@ gem 'selenium-webdriver'
 gem 'capybara'
 gem 'bootstrap-sass'
 gem 'sprockets'
+gem 'bcrypt'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
