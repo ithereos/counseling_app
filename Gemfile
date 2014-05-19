@@ -12,6 +12,7 @@ gem 'capybara'
 gem 'bootstrap-sass'
 gem 'sprockets'
 gem 'bcrypt'
+gem 'factory_girl_rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
