@@ -1,10 +1,24 @@
 SampleApp::Application.routes.draw do
  
+  get "clients/index"
+  get "clients/new"
+  get "clients/create"
+  get "clients/destroy"
+  get "clients/update"
+  get "clients/show"
+  get "clients_controller/new"
+  get "clients_controller/index"
+  get "clients_controller/create"
+  get "clients_controller/destroy"
+  get "clients_controller/update"
   #get "users/new"
 
   root  'static_pages#home'
+  
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :clients
+
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
