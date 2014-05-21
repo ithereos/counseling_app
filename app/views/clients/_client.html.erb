@@ -1,0 +1,8 @@
+<li>
+  <%= gravatar_for client, size: 52 %>
+  <%= link_to client.name, client %>
+ 
+    | <%= link_to "delete", client, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  
+</li>

@@ -1,19 +1,6 @@
 SampleApp::Application.routes.draw do
  
-  get "clients/index"
-  get "clients/new"
-  get "clients/create"
-  get "clients/destroy"
-  get "clients/update"
-  get "clients/show"
-  get "clients_controller/new"
-  get "clients_controller/index"
-  get "clients_controller/create"
-  get "clients_controller/destroy"
-  get "clients_controller/update"
-  #get "users/new"
-
-  root  'static_pages#home'
+    root  'sessions#new'
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
@@ -25,6 +12,7 @@ SampleApp::Application.routes.draw do
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+  #match '/new_client', to: 'clients#new', via: 'get'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,9 +1,10 @@
-<% provide(:title, 'Nuevo cliente') %>
-<h1>Nuevo cliente</h1>
+<% provide(:title, "Editar cliente") %>
+<h1>Actualizar cliente</h1>
+
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@client) do |f| %>
-     <%= render 'shared/error_messages_clients' %>
+    <%= form_for(@cliente) do |f| %>
+      <%= render 'shared/error_messages_clientes' %>
 
       <%= f.label :idnumber %>
       <%= f.text_field :idnumber %>
@@ -19,8 +20,10 @@
 
       <%= f.label :email  %>
       <%= f.text_field :email %>
-
-      <%= f.submit "Crear cliente", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Guardar", class: "btn btn-large btn-primary" %>
     <% end %>
+
+    <%= gravatar_for @client %>
+    <a href="http://gravatar.com/emails">change</a>
   </div>
 </div>
