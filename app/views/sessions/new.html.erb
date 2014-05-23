@@ -1,19 +1,38 @@
-<% provide(:title, "Sign in") %>
-<h1>Sign in</h1>
+<% provide(:title, "Ingreso") %>
+
+<br>
+<br>
+<br>
+<br>
+<h1>Bienvenido</h1>
+
 
 <div class="row">
+
   <div class="span6 offset3">
     <%= form_for(:session, url: sessions_path) do |f| %>
 
-      <%= f.label :email %>
+      <%= f.label :email, 'Correo' %>
       <%= f.text_field :email %>
 
-      <%= f.label :password %>
+      <br>
+      <br>
+
+      <%= f.label :password, 'Contraseña' %>
       <%= f.password_field :password %>
 
-      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+      <br>
+      <br>
+
+      <%= f.submit "Ingresar", class: "btn btn-large btn-primary" %>
     <% end %>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <!--<p>New user? <% link_to "Sign up now!", signup_path %></p>-->
   </div>
+
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>

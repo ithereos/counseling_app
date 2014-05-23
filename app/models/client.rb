@@ -10,4 +10,9 @@ class Client < ActiveRecord::Base
 	validates :email, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 	before_save { self.email = email.downcase }
 
+	has_many :requests, foreign_key: "requester_id"
+	has_many :requests_against, foreign_key: "requested_id", class_name: "Request"
+
+
+
 end

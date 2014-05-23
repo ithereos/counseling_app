@@ -18,8 +18,8 @@ namespace :db do
   # end
 
    task populate: :environment do
-    User.create!(name: "Example User",
-                 email: "example@railstutorial.org",
+    User.create!(name: "Alejandro Guerrero",
+                 email: "iknight93@gmail.com",
                  password: "foobar",
                  password_confirmation: "foobar",
                  admin: true)
@@ -34,7 +34,7 @@ namespace :db do
                    password_confirmation: password)
     end
 
-    20.times do |n|
+    50.times do |n|
       name = Faker::Name.first_name
       lastname = Faker::Name.last_name
       age = Faker::Number.number(2)
@@ -47,6 +47,16 @@ namespace :db do
                    idnumber: idnumber)
 
     end
+
+
+    # 20.times do |n|
+    #   requested_id = 1 + rand(40)
+    #   requester_id = 1 + rand(40)
+    #   details = Faker::Lorem.sentences(4)
+    #   Request.create!(requester_id: requester_id,
+    #                requested_id: requested_id,
+    #                details: details)
+    # end
 
     
   end

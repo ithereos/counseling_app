@@ -1,10 +1,11 @@
 SampleApp::Application.routes.draw do
  
-    root  'sessions#new'
+  root  'sessions#new'
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :clients
+  resources :requests
 
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'

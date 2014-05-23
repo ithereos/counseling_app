@@ -5,19 +5,19 @@
     <%= form_for(@client) do |f| %>
      <%= render 'shared/error_messages_clients' %>
 
-      <%= f.label :idnumber %>
+      <%= f.label :idnumber, 'Identificación' %>
       <%= f.text_field :idnumber %>
 
-      <%= f.label :name %>
+      <%= f.label :name, 'Nombre' %>
       <%= f.text_field :name %>
 
-      <%= f.label :lastname %>
+      <%= f.label :lastname, 'Apellido' %>
       <%= f.text_field :lastname %>
 
-      <%= f.label :age %>
+      <%= f.label :age, 'Edad' %>
       <%= f.number_field :age %>
 
-      <%= f.label :email  %>
+      <%= f.label :email, 'Correo'  %>
       <%= f.text_field :email %>
 
       <%= f.submit "Crear cliente", class: "btn btn-large btn-primary" %>

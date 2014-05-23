@@ -1,0 +1,21 @@
+<% provide(:title, 'Nueva solicitud') %>
+<h1>Nueva solicitud</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@request) do |f| %>
+     <%= render 'shared/error_messages_requests' %>
+
+      <%= f.label :requester_id, 'Solicitante' %>
+      <%= f.text_field :requester_id %>
+
+      <%= f.label :requested_id, 'Solicitado' %>
+      <%= f.text_field :requested_id %>
+
+      <%= f.label :details, 'Detalles' %>
+      <%= f.text_field :details %>
+
+     
+      <%= f.submit "Crear solicitud", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

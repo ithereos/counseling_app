@@ -1,11 +1,39 @@
 <% provide(:title, @user.name) %>
+<br>
+<br>
+<br>
 <div class="row">
-  <aside class="span4">
+  <aside class="span8">
     <section>
       <h1>
         <%= gravatar_for @user %>
+        <br>
         <%= @user.name %>
       </h1>
+      <em><%= @user.email %><em>
+      <br>
+      <br>
+      <% if @user.admin? %>
+
+      <div>
+         <span class="label label-success">ADMINISTRADOR</span></h3>
+      </div>
+      <% else %>
+      <div>
+         <span class="label label-default">USUARIO</span></h3>
+      </div>
+      <% end %>
+
     </section>
   </aside>
 </div>
+<br>
+<br>
+<br><br>
+<br>
+<br><br>
+<br>
+<br><br>
+<br>
+<br><br>
+<br>

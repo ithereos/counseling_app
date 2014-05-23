@@ -1,0 +1,14 @@
+<% provide(:title, 'Solicitud Nº '+@request.id.to_s) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        
+        <%= @request.id %>
+        <%= @request.requester_id.to_s %>
+        <%= @request.requested_id.to_s %>
+        <%= @request.details.to_s %>
+      </h1>
+    </section>
+  </aside>
+</div>
