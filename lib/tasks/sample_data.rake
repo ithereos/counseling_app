@@ -18,11 +18,18 @@ namespace :db do
   # end
 
    task populate: :environment do
+
     User.create!(name: "Alejandro Guerrero",
                  email: "iknight93@gmail.com",
                  password: "foobar",
                  password_confirmation: "foobar",
                  admin: true)
+
+    User.create!(name: "Usuario normal",
+                 email: "usuario@normal.com",
+                 password: "123456",
+                 password_confirmation: "123456",
+                 admin: false)
 
     10.times do |n|
       name  = Faker::Name.name
@@ -40,11 +47,19 @@ namespace :db do
       age = Faker::Number.number(2)
       email = "example-#{n+1}@clients.org"
       idnumber = Faker::Number.number(10)
+      estrato = Faker::Number.number(1)
+      phone_number = Faker::PhoneNumber.cell_phone
+      occupation = Faker::Commerce.department
+      address = Faker::Address.street_address
       Client.create!(name: name,
                    lastname: lastname,
                    age: age,
                    email: email,
-                   idnumber: idnumber)
+                   idnumber: idnumber,
+                   estrato: estrato,
+                   phone_number: phone_number,
+                   occupation: occupation,
+                   address: address)
 
     end
 

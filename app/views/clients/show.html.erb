@@ -1,15 +1,94 @@
 <% provide(:title, @client.name) %>
+<h1>Información del cliente</h1>
+<br>
+<br>
+
 <div class="row">
-  <aside class="span4">
+  <aside class="span8">
     <section>
       <h1>
         <%= gravatar_for @client %>
-        <%= @client.name %>
-        
-
-
-        
+        <br>
+        <%= @client.name+" "+@client.lastname %>
       </h1>
-    </section>
+      <em><%= @client.email %><em>
+      <br>
+      <br>
+      <span class="label label-warning">Usuario</span>
+  	</section>
+  	<br>
+  	<br>
+
+    
+  </aside>
+  <aside class="span6" >
+  	<section>
+  		<div class="panel panel-default">
+  			<div class="panel-heading">
+    			<h2 class="panel-title">Identificación</h2>
+  			</div>
+  			<div class="panel-body">
+    			<%= @client.idnumber %>
+  			</div>
+		</div>
+  	</section>
+  	<section>
+  		<div class="panel panel-default">
+  			<div class="panel-heading">
+    			<h2 class="panel-title">Edad</h2>
+  			</div>
+  			<div class="panel-body">
+    			<%= @client.age %>
+  			</div>
+		</div>
+  	</section>
+  	<section>
+  		<div class="panel panel-default">
+  			<div class="panel-heading">
+    			<h2 class="panel-title">Teléfono</h2>
+  			</div>
+  			<div class="panel-body">
+    			<%= @client.phone_number %>
+  			</div>
+		</div>
+  	</section>
+  	
+  </aside>
+   <aside class="span6" >
+  	<section>
+  		<div>
+  			<div class="panel-heading">
+    			<h2 class="panel-title">Dirección</h2>
+  			</div>
+  			<div class="panel-body">
+    			<%= @client.address %>
+  			</div>
+		</div>
+  	</section>
+  	<section>
+  		<div class="panel panel-default">
+  			<div class="panel-heading">
+    			<h2 class="panel-title">Ocupación</h2>
+  			</div>
+  			<div class="panel-body">
+    			<%= @client.occupation %>
+  			</div>
+		</div>
+  	</section>
+  	<section>
+  		<div class="panel panel-default">
+  			<div class="panel-heading">
+    			<h2 class="panel-title">Estrato</h2>
+  			</div>
+  			<div class="panel-body">
+    			<%= @client.estrato %>
+  			</div>
+		</div>
+  	</section>
+  	
   </aside>
 </div>
+<br>
+<br>
+<br>
+<br>

@@ -1,10 +1,10 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "Registro de Conciliaciones", root_path, id: "logo" %>
+      <%= link_to "Registro de Conciliaciones", '/home', id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Inicio", root_path %></li>
+          <li><%= link_to "Inicio", '/home' %></li>
           
           <% if signed_in? %>
             <li><%= link_to "Clientes", clients_path %></li>

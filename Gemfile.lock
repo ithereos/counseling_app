@@ -80,6 +80,7 @@ GEM
       mini_portile (= 0.6.0)
     nokogiri (1.6.2.1-x86-mingw32)
       mini_portile (= 0.6.0)
+    pdfkit (0.6.2)
     pg (0.17.1)
     pg (0.17.1-x86-mingw32)
     polyglot (0.3.4)
@@ -168,6 +169,7 @@ DEPENDENCIES
   faker
   jbuilder (~> 1.2)
   jquery-rails
+  pdfkit
   pg
   rails (= 4.0.4)
   rspec-rails

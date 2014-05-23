@@ -1,8 +1,17 @@
 <li>
+	<span>
+
   <%= gravatar_for client, size: 52 %>
-  <%= link_to client.name, client %>
+  <%= link_to client.name+" "+client.lastname, client %> |
+  <%= client.idnumber %>
+  <br>
+  <span class="label label-warning"><%= client.email %></span>
+  
+</span>
+
+
  
-    | <%= link_to "delete", client, method: :delete,
-                                  data: { confirm: "You sure?" } %>
+    <span style="float: right"> <%= link_to "Eliminar", client, method: :delete,
+                                  data: { confirm: "Confirmar la eliminación del cliente" } %></span>
   
 </li>

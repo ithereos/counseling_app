@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :signed_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: [:destroy, :new]
 
   def new
   	@user = User.new
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted."
+    flash[:success] = "Usuario eliminado satisfactoriamente."
     redirect_to users_url
   end
 
@@ -25,10 +25,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+    if @user.save 
+      
+      flash[:success] = "Usuario creado!"
+      redirect_to users_url
+      
     else
       render 'new'
     end
