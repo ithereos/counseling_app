@@ -14,6 +14,17 @@
       <%= f.label :details, 'Detalles' %>
       <%= f.text_field :details %>
 
+      <%= f.label :pleas, 'Peticiones' %>
+      <%= f.text_area :pleas %>
+
+      <%= f.label :appendices, 'Anexos' %>
+      <%= f.file_field :appendices %>
+
+      <%= f.label :proofs, 'Pruebas' %>
+      <%= f.file_field :proofs %>
+
+
+
      
       <%= f.submit "Crear solicitud", class: "btn btn-large btn-primary" %>
     <% end %>
