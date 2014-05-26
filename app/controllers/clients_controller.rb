@@ -40,16 +40,14 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    @requests = Request.find_by(requester_id: @client.id)
   end
 
   def requesting?(other_client)
     requests.find_by(requested_id: other_user.id)
   end
 
-  # def follow!(other_user)
-  #   requests.create!(requested_id: other_user.id)
-  # end
-
+  
   private
 
     def client_params

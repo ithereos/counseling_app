@@ -92,3 +92,93 @@
 <br>
 <br>
 <br>
+<div class="span5" style="text-align:center" >
+  
+  <table class="table-bordered">
+    <caption><strong>Solicitudes generadas</strong></caption>
+    <tr>
+      <th>
+      Solicitud Nº
+      </th>
+      <th>
+       Solicitada a
+     </th>
+     <th>
+        Resumen
+      </th>      
+    </tr>   
+    <% if @client.requests.any? %>   
+      <% @client.requests.each do |r| %>
+      <tr>
+        <td>
+          <%= link_to r.id, request_path(r) %>
+        </td>
+        <td>
+          <%= link_to "#{r.requested.name} #{r.requested.lastname}", client_path(r.requested) %>
+        </td>
+        <td>
+          <%= r.details %>
+        </td>
+          
+      </tr>
+        
+      <% end %>
+    <% else %>
+    <tr>
+      <td colspan=3>
+        <h2>Ninguna</h2>
+        
+      </td>
+    </tr>
+    <% end %>
+
+  </table>
+
+
+</div>
+
+<div class="span5" style="text-align:center;display:inline-block">
+  
+  <table class="table-bordered">
+    <caption><strong>Solicitudes en contra</strong></caption>
+    <tr>
+      <th>
+      Solicitud Nº
+      </th>
+      <th>
+       Solicitado por
+     </th>
+     <th>
+        Resumen
+      </th>      
+    </tr>
+    <% if @client.requests_against.any? %>   
+      <% @client.requests_against.each do |r| %>
+      <tr>
+        <td>
+          <%= link_to r.id, request_path(r) %>
+        </td>
+        <td>
+          <%= link_to "#{r.requester.name} #{r.requester.lastname}", client_path(r.requester) %>
+        </td>
+        <td>
+          <%= r.details %>
+        </td>
+          
+      </tr>
+        
+      <% end %>
+    <% else %>
+    <tr>
+      <td colspan=3>
+        <h2>Ninguna</h2>
+        
+      </td>
+    </tr>
+    <% end %>
+
+  </table>
+  
+
+
+</div>
