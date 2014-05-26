@@ -67,8 +67,8 @@ namespace :db do
     20.times do |n|
       requester_id = 1 + rand(40)
       requested_id = 1 + rand(40)
-      details = Faker::Lorem.sentences(4)
-      pleas = Faker::Lorem.sentences(4)
+      details = Faker::Lorem.sentences(4).join
+      pleas = Faker::Lorem.sentences(4).join
       Request.create!(requester_id: requester_id,
                    requested_id: requested_id,
                    details: details,

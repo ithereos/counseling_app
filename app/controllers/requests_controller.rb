@@ -34,7 +34,10 @@ class RequestsController < ApplicationController
 
 	def index
 
-		@requests = Request.paginate(page: params[:page], per_page: 10)
+		# @requests = Request.paginate(page: params[:page], per_page: 10)
+		
+    	@requests = Request.paginate(page: params[:page], per_page: 10)
+  
 		
 	end
 

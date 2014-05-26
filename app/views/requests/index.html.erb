@@ -3,10 +3,70 @@
 
 <%= link_to "Crear solicitud", new_request_path, class: "btn btn-large btn-primary" %>
 
-<%= will_paginate %>
+<hr>
 
-<ul class="users">
-  <%= render @requests %>
-</ul>
 
-<%= will_paginate %>
+<table class="table table-striped">
+		<tr>
+			<th>
+				Fecha 
+			</th>
+			<th>
+				Solicitud Nº
+			</th>
+			<th>
+				ID del solicitante
+			</th>
+			<th>
+				Nombre del solicitante
+			</th>
+			<th>
+				ID del solicitado
+			</th>
+			<th>
+				Nombre del solicitado
+			</th>
+			<th>
+				Resumen
+			</th>
+
+		</tr>
+		<%= will_paginate %>
+		<% @requests.each do |request| %>
+		
+
+
+
+
+		
+		<tr>
+			<td>
+				<%= request.created_at.strftime("%d/%m/%Y") %>
+			</td>
+			<td>
+				<%= link_to request.id, request_path(request) %>
+			</td>
+			<td>
+				<%= request.requester.idnumber %>
+			</td>
+			<td>
+				<%= link_to "#{request.requester.name} #{request.requester.lastname}", client_path(request.requester) %>
+			</td>
+			<td>
+				<%= request.requested.idnumber %>
+			</td>
+			<td>
+				<%= link_to "#{request.requested.name} #{request.requested.lastname}", client_path(request.requested) %>
+			</td>
+			<td>
+				<%= request.details %>
+			</td>
+		</tr>
+
+		
+		<% end %>
+
+
+ 
+	</table>
+	<%= will_paginate %>
