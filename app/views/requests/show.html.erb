@@ -2,35 +2,72 @@
 
 <h1>Información de la Solicitud</h1>
 
+<div class="container" style="padding-top:40px">
+	<div> 
 
-<div class="row"> 
+		<h3> Solicitud Nº <%= @request.id %> </h3>
+		<span><%= @request.created_at.strftime("%d/%m/%Y") %></span>
+		<hr>
+		<br>
+		
 
-	<h3> Solicitud Nº <%= @request.id %> </h3>
+		<div class="span3 offset3 panel panel-success">
+			<div class="panel-heading">
+				<h2 class="panel-title">Solicitante </h2>
+			</div>
+			<div class="panel-body" style="text-align:center">
+				<h3 style="text-align:center"><%= link_to "#{@request.requester.name} #{@request.requester.lastname}", client_path(@request.requester)%></h3>
+				
+				<span><%= @request.requester.idnumber %></span>
+			</div>
+		</div>
+		
+		<div class="span3 panel panel-warning">
+			<div class="panel-heading">
+				<h2 class="panel-title">Solicitado</h2>
+			</div>
+			<div class="panel-body" style="text-align:center">
+				<h3 style="text-align:center"><%= link_to "#{@request.requested.name} #{@request.requested.lastname}", client_path(@request.requested) %></h3>
+				<span><%= @request.requester.idnumber %></span>
+			</div>		
+
+		</div>
+
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<hr>
-	<div class="span3 offset3 panel panel-success">
-		<div class="panel-heading">
-			<h2 class="panel-title">Solicitante </h3>
-		</div>
-		<div class="panel-body">
-			<%= "#{@request.requester.name} #{@request.requester.lastname}" %>
-		</div>
-	</div>
+	<br>
+
 	
-	<div class="span3 panel panel-warning">
-		<div class="panel-heading">
-			<h2 class="panel-title">Solicitado</h2>
-		</div>
-		<div class="panel-body">
-			<%= "#{@request.requested.name} #{@request.requested.lastname}" %>
-		</div>		
 
-	</div>
+	<dl class="dl-horizontal">
 
+	  		<dt>Hechos:</dt>
+	  		<dd>
+	  			<div>
+	  				<textarea disabled rows = "10" readonly style="resize:none;owerflow-y:scroll"><%= @request.details %></textarea>
+	  			</div>
+	  			
+	  		</dd>
+	</dl>
+
+	<br>
+
+	<dl class="dl-horizontal">
+
+	  		<dt>Peticiones:</dt>
+	  		<dd>
+	  			<div>
+	  				<textarea disabled rows = "10" readonly style="resize:none;owerflow-y:scroll"><%= @request.pleas %></textarea>
+	  			</div>
+	  			
+	  		</dd>
+	</dl>
 
 </div>
-
-<dl class="dl-horizontal">
-
-  		<dt>Hechos</dt>
-  		<dd><%= @request.details %></dd>
-</dl>

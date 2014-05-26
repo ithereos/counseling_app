@@ -64,14 +64,16 @@ namespace :db do
     end
 
 
-    # 20.times do |n|
-    #   requested_id = 1 + rand(40)
-    #   requester_id = 1 + rand(40)
-    #   details = Faker::Lorem.sentences(4)
-    #   Request.create!(requester_id: requester_id,
-    #                requested_id: requested_id,
-    #                details: details)
-    # end
+    20.times do |n|
+      requester_id = 1 + rand(40)
+      requested_id = 1 + rand(40)
+      details = Faker::Lorem.sentences(4)
+      pleas = Faker::Lorem.sentences(4)
+      Request.create!(requester_id: requester_id,
+                   requested_id: requested_id,
+                   details: details,
+                   pleas: pleas)
+    end
 
     
   end
