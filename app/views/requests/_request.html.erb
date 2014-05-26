@@ -1,5 +1,6 @@
 <li>
-	<span> Solicitud Nº <%= request.id %> | <%= link_to request.details, request %> | </span>
+	<span> Solicitud Nº <%= request.id %> | <%= link_to request.details, request %> </span>
+	<span> <%= link_to "Eliminar", request, method: :delete %> </span>
   
   
 

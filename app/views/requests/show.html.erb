@@ -2,14 +2,35 @@
 
 <h1>Información de la Solicitud</h1>
 
-<div class="row">
-  <aside class="span8">
-    <section>
-      <h2>Solicitud Nº<%= @request.id %></h2>
-      <br>
-      <br>
-      
 
-    </section>
-  </aside>
+<div class="row"> 
+
+	<h3> Solicitud Nº <%= @request.id %> </h3>
+	<hr>
+	<div class="span3 offset3 panel panel-success">
+		<div class="panel-heading">
+			<h2 class="panel-title">Solicitante </h3>
+		</div>
+		<div class="panel-body">
+			<%= "#{@request.requester.name} #{@request.requester.lastname}" %>
+		</div>
+	</div>
+	
+	<div class="span3 panel panel-warning">
+		<div class="panel-heading">
+			<h2 class="panel-title">Solicitado</h2>
+		</div>
+		<div class="panel-body">
+			<%= "#{@request.requested.name} #{@request.requested.lastname}" %>
+		</div>		
+
+	</div>
+
+
 </div>
+
+<dl class="dl-horizontal">
+
+  		<dt>Hechos</dt>
+  		<dd><%= @request.details %></dd>
+</dl>

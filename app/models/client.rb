@@ -13,6 +13,10 @@ class Client < ActiveRecord::Base
 	has_many :requests, foreign_key: "requester_id"
 	has_many :requests_against, foreign_key: "requested_id", class_name: "Request"
 
+	def name_with_initial
+    	"#{name}.#{lastname}"
+  	end
+
 
 
 end

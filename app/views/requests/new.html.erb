@@ -6,10 +6,11 @@
      <%= render 'shared/error_messages_requests' %>
 
       <%= f.label :requester_id, 'Solicitante' %>
-      <%= f.text_field :requester_id %>
+      <%= f.collection_select :requester_id, Client.order(:lastname),:id,:name_with_initial, prompt: "Seleccione un cliente..." %>
+
 
       <%= f.label :requested_id, 'Solicitado' %>
-      <%= f.text_field :requested_id %>
+      <%= f.collection_select :requested_id, Client.order(:lastname),:id,:name_with_initial, prompt: "Seleccione un cliente..." %>
 
       <%= f.label :details, 'Detalles' %>
       <%= f.text_field :details %>

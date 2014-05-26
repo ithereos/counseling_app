@@ -3,6 +3,7 @@ class RequestsController < ApplicationController
 	def new
 
 		@request = Request.new		
+
 	end
 
 	def create
@@ -23,7 +24,16 @@ class RequestsController < ApplicationController
 	
 	end
 
+	def destroy
+
+		Request.find(params[:id]).destroy
+    	flash[:success] = "Usuario eliminado satisfactoriamente."
+    	redirect_to requests_url
+		
+	end
+
 	def index
+
 		@requests = Request.paginate(page: params[:page], per_page: 10)
 		
 	end
@@ -31,7 +41,7 @@ class RequestsController < ApplicationController
 	private
 
 		def request_params
-	      params.require(:request).permit(:requester_id, :requested_id, :details)
+	      params.require(:request).permit(:requester_id, :requested_id, :details, :pleas)
 	    end
 
 
