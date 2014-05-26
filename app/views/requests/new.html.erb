@@ -10,7 +10,7 @@
 
 
       <%= f.label :requested_id, 'Solicitado' %>
-      <%= f.collection_select :requested_id, Client.order(:lastname),:id,:name_with_initial, prompt: "Seleccione un cliente..." %>
+      <%= f.collection_select :requested_id, Client.order(:id),:id,:name_with_initial, prompt: "Seleccione un cliente..." %>
 
       <%= f.label :details, 'Detalles' %>
       <%= f.text_area :details %>

@@ -10,10 +10,7 @@ class RequestsController < ApplicationController
 
 		@request = Request.new(request_params)
     	if @request.save
-    		uploaded_io = params[:request][:appendices]
-  			File.open(Rails.root.join('app', 'public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
-    			file.write(uploaded_io.read)
-    		end
+    		
       		flash[:success] = "Solicitud guardada!"
      		redirect_to @request
     	else
@@ -31,21 +28,14 @@ class RequestsController < ApplicationController
 	def destroy
 
 		Request.find(params[:id]).destroy
-    	flash[:success] = "Usuario eliminado satisfactoriamente."
+    	flash[:success] = "Solicitud eliminada satisfactoriamente."
     	redirect_to requests_url
 		
 	end
 
-	def self.upload
- 		uploaded_io = params[:request][:appendices]
-  		File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
-    		file.write(uploaded_io.read)
-  		end
-	end
-
+	
 	def index
 
-		# @requests = Request.paginate(page: params[:page], per_page: 10)
 		
     	@requests = Request.paginate(page: params[:page], per_page: 10)
   
