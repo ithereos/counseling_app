@@ -75,17 +75,17 @@
 
 	<div class="span3 offset3">
 		<% if @request.appendices.url != "/appendices/original/missing.png" %>
-			<%= link_to "Anexos", @request.appendices.url(:original,false) %>
+			<h3><%= link_to "Anexos", @request.appendices.url(:original,false) %></h3>
 		<% else %>
-			<strong>No se agregaron anexos</strong>
+			<h3>No se agregaron anexos</h3>
 		<% end %>
 	</div>
 
 	<div class="span3">
 		<% if @request.appendices.url != "/appendices/original/missing.png" %>
-			<%= link_to "Pruebas", @request.proofs.url(:original,false) %>
+			<h3><%= link_to "Pruebas", @request.proofs.url(:original,false) %></h3>
 		<% else %>
-			<strong>No se agregaron pruebas</strong>
+			<h3>No se agregaron pruebas</h3>
 		<% end %>
 	</div>
 	
