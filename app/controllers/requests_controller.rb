@@ -3,19 +3,15 @@ class RequestsController < ApplicationController
 	def new
 
 		@request = Request.new		
-
+		
 	end
 
 	def create
 
 		@request = Request.new(request_params)
-    	if @request.save
-
-    		
+    	if @request.save    		
       		flash[:success] = "Solicitud guardada!"
-
      		redirect_to @request
-
     	else
       		render 'new'
     	end
@@ -25,7 +21,7 @@ class RequestsController < ApplicationController
 	def show
 
     	@request = Request.find(params[:id]) 
-	
+
 	end
 
 	def destroy
