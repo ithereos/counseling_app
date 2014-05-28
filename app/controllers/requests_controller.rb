@@ -10,9 +10,12 @@ class RequestsController < ApplicationController
 
 		@request = Request.new(request_params)
     	if @request.save
+
     		
       		flash[:success] = "Solicitud guardada!"
+
      		redirect_to @request
+
     	else
       		render 'new'
     	end
@@ -35,17 +38,16 @@ class RequestsController < ApplicationController
 
 	
 	def index
-
 		
-    	@requests = Request.paginate(page: params[:page], per_page: 10)
-  
+    	@requests = Request.paginate(page: params[:page], per_page: 10)  
 		
 	end
+
 
 	private
 
 		def request_params
-	      params.require(:request).permit(:requester_id, :requested_id, :details, :pleas)
+	      params.require(:request).permit(:requester_id, :requested_id, :details, :pleas, :appendices, :proofs)
 	    end
 
 

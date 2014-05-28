@@ -4,4 +4,8 @@ class Request < ActiveRecord::Base
  	validates :requester_id, presence: true
     validates :requested_id, presence: true
     validates :details, presence: true
+    has_attached_file :appendices, :url => "/appendices/:filename"
+    has_attached_file :proofs, :url => "/proofs/:filename"
+    do_not_validate_attachment_file_type :proofs
+    do_not_validate_attachment_file_type :appendices
 end

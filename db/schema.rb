@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140526113032) do
+ActiveRecord::Schema.define(version: 20140528192655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,8 +39,14 @@ ActiveRecord::Schema.define(version: 20140526113032) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "pleas"
-    t.binary   "appendices"
-    t.binary   "proofs"
+    t.string   "appendices_file_name"
+    t.string   "appendices_content_type"
+    t.integer  "appendices_file_size"
+    t.datetime "appendices_updated_at"
+    t.string   "proofs_file_name"
+    t.string   "proofs_content_type"
+    t.integer  "proofs_file_size"
+    t.datetime "proofs_updated_at"
   end
 
   add_index "requests", ["requested_id"], name: "index_requests_on_requested_id", using: :btree

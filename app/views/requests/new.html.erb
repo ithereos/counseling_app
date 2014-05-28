@@ -2,7 +2,7 @@
 <h1>Nueva solicitud</h1>
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@request) do |f| %>
+    <%= form_for @request, :url => requests_path, :html => { :multipart => true } do |f| %>
      <%= render 'shared/error_messages_requests' %>
 
       <%= f.label :requester_id, 'Solicitante' %>
