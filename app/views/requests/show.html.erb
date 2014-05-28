@@ -32,7 +32,7 @@
 			</div>		
 
 		</div>
-		<%= link_to "Anexos", @request.appendices.url(:original,false) %>
+		
 
 	</div>
 	<br>
@@ -70,6 +70,26 @@
 	  			
 	  		</dd>
 	</dl>
+
+	<hr>
+
+	<div class="span3 offset3">
+		<% if @request.appendices.url != "/appendices/original/missing.png" %>
+			<%= link_to "Anexos", @request.appendices.url(:original,false) %>
+		<% else %>
+			<strong>No se agregaron anexos</strong>
+		<% end %>
+	</div>
+
+	<div class="span3">
+		<% if @request.appendices.url != "/appendices/original/missing.png" %>
+			<%= link_to "Pruebas", @request.proofs.url(:original,false) %>
+		<% else %>
+			<strong>No se agregaron pruebas</strong>
+		<% end %>
+	</div>
+	
+	
 
 	
 	
